@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "manage_db";
+$dbname = "manage_db"; //sesuaikan dengan nama database
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
