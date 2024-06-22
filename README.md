@@ -1,2 +1,2 @@
 # simple-php-crud
-A simple crud with php and mysql
+Ini adalah website simple dengan login serta crud yang terhubung dengan database
