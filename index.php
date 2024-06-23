@@ -100,11 +100,11 @@ $total_used = hitungJumlahUsed($conn, 'item');
         <br>
         <br>
            <table class="table table-bordered table-striped">
-                    <th>Nama Barang</th> 
+                    <th>Items</th> 
                     <th>Stock</th> 
-                    <th>Pemakaian</th> 
+                    <th>Used</th> 
                     <th>Total</th>
-                    <th width="15%">Aksi</th> 
+                    <th width="15%">Action</th> 
                 </tr> 
                 <?php 
                 include 'koneksi.php'; 
@@ -119,7 +119,29 @@ $total_used = hitungJumlahUsed($conn, 'item');
                         </td> 
                         <td> 
                             <a type="submit" class="btn btn-primary" href="edit.php?id=<?php echo $d['id']; ?>">Update</a>
-                            <a type="submit" class="btn btn-danger" href="hapus.php?id=<?php echo $d['id']; ?>">Delete</a>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+                              Delete
+                            </button>
+                            <!-- Delete Modal -->
+                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">Delete Item</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    Apakah anda yakin ingin menghapus item ini?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <a type="submit" class="btn btn-danger" href="hapus.php?id=<?php echo $d['id']; ?>">Delete</a>
+                                  </div>
+                                </div>
+                               </div>
+                              </div>
                         </td> 
                     </tr> 
                 <?php 
